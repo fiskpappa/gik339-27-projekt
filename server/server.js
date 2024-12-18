@@ -32,7 +32,7 @@ server.get('/clients', (req, res) => {
 server.get('/client/:id', (req, res) => {
     const id = req.params.id;
   
-    const sql = `SELECT * FROM users WHERE id=${id}`;
+    const sql = `SELECT * FROM clients WHERE id=${id}`;
   
     db.all(sql, (err, rows) => {
       if (err) {
@@ -53,7 +53,7 @@ server.post('/clients', (req, res) => {
           console.log(err);
           res.status(500).send(err);
         } else {
-          res.send("Användaren sparades");
+          res.send('Användaren sparades');
         }
       });
 });
@@ -102,6 +102,8 @@ server.put('/clients', (req, res) => {
         res.send('Användaren uppdaterades');
       }
     });
+  });
+
 
 server.delete('/clients/:id', (req, res) => {
   const id = req.params.id;
