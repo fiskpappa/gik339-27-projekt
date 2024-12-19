@@ -1,3 +1,10 @@
+<<<<<<< Updated upstream
+=======
+body {
+    margin: 0;
+}
+
+>>>>>>> Stashed changes
 .body-bg {
     position: absolute;
     min-height: 100vh;
@@ -37,7 +44,7 @@
 }
 #clientForm {
     font-size: 2rem;
-    text-transform: uppercase;
+ /*    text-transform: uppercase; */
     color: rgb(red, green, blue);
 }
 
