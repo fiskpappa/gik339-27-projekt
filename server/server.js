@@ -32,7 +32,7 @@ server.get('/clients', (req, res) => {
 server.get('/client/:id', (req, res) => {
     const id = req.params.id;
   
-    const sql = `SELECT * FROM users WHERE id=${id}`;
+    const sql = `SELECT * FROM clients WHERE id=${id}`;
   
     db.all(sql, (err, rows) => {
       if (err) {
