@@ -36,7 +36,7 @@
 
 }
 #clientForm {
-    font-size: 2rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     color: rgb(red, green, blue);
 }
@@ -56,6 +56,10 @@
                 0 6px 6px 0 rgba(0,0,0,0.24);
     transition: 0.3s;
     transform: scale(1.05);
+}
+
+.button:active {
+    transform: scale(0.95);
 }
 
 .textfield {

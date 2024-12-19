@@ -12,8 +12,8 @@
     <img class="SDC-logo" src="./media/img/SDC-logo.png">
       <div class="container col-12">
         <div class="row">
-          <div class="formWrapper">
-            <form id="clientForm">Formulääääär här</form>
+          <div class="formWrapper col-6 offset-2">
+            <form id="clientForm">
               <label for="companyName">Företagsnamn</label>
                 <input type="text" name="companyName" placeholder="Företagsnamn" id="companyName" class="textfield"></input><br>
 
@@ -37,16 +37,15 @@
                     <option value="red">Röd</option>
                     <option value="yellow">Gul</option>
                   </select>
-                  <button id="buttonRemove" class="button" type="reset"
+                  <button id="remove" class="button" type="reset"
                   name="clearUserForm" >Rensa formulär</button>
-                  <button id="buttonSubmit" class="button" type="submit"
-                  name="submitUserForm" >Skicka in</button>
-        
+                  <button id="submit" class="button" type="submit"
+                  name="submitUserForm" >Skicka in</button>      
             </form>
           </div>  
         </div>
       </div>
-    <div id="cardContainer" class="col-12"></div>
+    <div id="cardContainer" class="container"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src ="./script.js"></script>

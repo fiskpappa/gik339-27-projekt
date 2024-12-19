@@ -32,7 +32,8 @@ server.get('/clients', (req, res) => {
 
 server.get('/client/:id', (req, res) => {
     const id = req.params.id;
-    const sql = `SELECT * FROM clients WHERE id=${id}`;  
+    const sql = `SELECT * FROM clients WHERE id=${id}`; 
+
     db.all(sql, (err, rows) => {
       if (err) {
         res.status(500).send(err);
@@ -46,7 +47,7 @@ server.get('/client/:id', (req, res) => {
 server.post('/clients', (req, res) => {
     const client = req.body;
     const sql = `INSERT INTO clients(companyName, contactName, contactEmail, projectType, projectLength, color) VALUES 
-    (?, ?, ?, ?, ?, ?)`;
+    (?,?,?,?,?,?)`;
     
     db.run(sql, Object.values(client), (err) => {
         if (err) {
@@ -58,20 +59,6 @@ server.post('/clients', (req, res) => {
       });
 });
 
-
- server.put('/clients', (req, res) => {
-    const id = req.params.id;
-    const companyName = req.params.companyName;
-    const contactName = req.params.contactName;
-    const contactEmail = req.params.contactEmail;
-    const projectType = req.params.projectType;
-    const projectLength = req.params.projectLength;
-    const companyColor = req.params.companyColor;
-    const url = req.url;
-    const body = req.body;
-
-    res.send({id, companyName, contactName, contactEmail, projectType,projectLength, color, url, body});
-}); 
 
 server.put('/clients', (req, res) => {
     const bodyData = req.body;
@@ -85,6 +72,8 @@ server.put('/clients', (req, res) => {
       projectLength: bodyData.projectLength,
       color: bodyData.color
     };
+
+ 
   
     let updateString = '';
     const columnsArray = Object.keys(client);
@@ -119,16 +108,3 @@ server.delete('/clients/:id', (req, res) => {
   });
 });
 
-server.delete('/clients/:id/:companyName/:contactName/:contactEmail/:projectType/:projectLength/:companyColor', (req, res) => {
-    const id = req.params.id;
-    const sql = `DELETE FROM clients WHERE id = ${id}`;
-
-    db.run(sql, (err) => {
-        if(err) {
-            console.log(err);
-            res.status(500).send(err);
-        } else {
-            res.send('Annons borttagen');
-        }
-    })
-});
