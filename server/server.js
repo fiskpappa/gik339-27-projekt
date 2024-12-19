@@ -3,6 +3,7 @@ const server = express();
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./client_companies.db');
 
+/* standardinställningar och fångar in alla inkommande förfrågningar*/
 server
  .use(express.json())
  .use(express.urlencoded({ extended: false }))
@@ -58,7 +59,7 @@ server.post('/clients', (req, res) => {
 });
 
 
-/* server.put('/clients', (req, res) => {
+ server.put('/clients', (req, res) => {
     const id = req.params.id;
     const companyName = req.params.companyName;
     const contactName = req.params.contactName;
@@ -70,7 +71,7 @@ server.post('/clients', (req, res) => {
     const body = req.body;
 
     res.send({id, companyName, contactName, contactEmail, projectType,projectLength, color, url, body});
-}); */
+}); 
 
 server.put('/clients', (req, res) => {
     const bodyData = req.body;
@@ -118,8 +119,7 @@ server.delete('/clients/:id', (req, res) => {
   });
 });
 
-
-/* server.delete('/clients/:id/:companyName/:contactName/:contactEmail/:projectType/:projectLength/:companyColor', (req, res) => {
+server.delete('/clients/:id/:companyName/:contactName/:contactEmail/:projectType/:projectLength/:companyColor', (req, res) => {
     const id = req.params.id;
     const sql = `DELETE FROM clients WHERE id = ${id}`;
 
@@ -131,4 +131,4 @@ server.delete('/clients/:id', (req, res) => {
             res.send('Annons borttagen');
         }
     })
-}); */
+});
