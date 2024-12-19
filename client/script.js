@@ -8,7 +8,9 @@ const url = 'http://localhost:3000/clients';
     console.log(clients)
   }); */
 
-  window.addEventListener('load', fetchData);
+window.addEventListener('load', fetchData);
+
+const rgbaColor = colorToRGBA(client.color, 0.3);
 
 function fetchData() {
   fetch(url)
@@ -18,8 +20,8 @@ function fetchData() {
         let html = `<ul class="col-12">`;
         clients.forEach((client) => {
           html += `
-        <li class="clientCard col-3">
-          <h3 class="text-${client.color}-900 text-decoration-none">${client.companyName}</h3>
+        <li class="clientCard style="background-color: ${rgbaColor};" col-3">
+          <h3 class="colorChanger" style="color: ${client.color};">${client.companyName}</h3>
           <p>Kontaktperson: ${client.contactName} <br> ${client.contactEmail}</p>
           <p>Projekttyp: ${client.projectType}</p>
           <p>Projektlängd: ${client.projectLength} veckor</p>
@@ -36,6 +38,10 @@ function fetchData() {
         cardContainer.insertAdjacentHTML('beforeend', html);
       }
     });
+}
+
+function colorToRGBA(colorName, opacity) {
+  const tempElement = do
 }
 
 function setCurrentUser(id) {
@@ -60,7 +66,7 @@ function deleteUser(id) {
   fetch(`${url}/${id}`, { method: 'DELETE' }).then((result) => fetchData());
 }
 
-userForm.addEventListener('submit', handleSubmit);
+clientForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(e) {
   e.preventDefault();

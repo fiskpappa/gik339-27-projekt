@@ -31,9 +31,7 @@ server.get('/clients', (req, res) => {
 
 server.get('/client/:id', (req, res) => {
     const id = req.params.id;
-  
-    const sql = `SELECT * FROM clients WHERE id=${id}`;
-  
+    const sql = `SELECT * FROM clients WHERE id=${id}`;  
     db.all(sql, (err, rows) => {
       if (err) {
         res.status(500).send(err);
@@ -45,8 +43,9 @@ server.get('/client/:id', (req, res) => {
 
  
 server.post('/clients', (req, res) => {
-    const body = req.body;
-    const sql = `INSERT INTO clients(companyName, contactName, contactEmail, projectType, projectLength, color) VALUES (?, ?, ?, ?, ?)`;
+    const client = req.body;
+    const sql = `INSERT INTO clients(companyName, contactName, contactEmail, projectType, projectLength, color) VALUES 
+    (?, ?, ?, ?, ?, ?)`;
     
     db.run(sql, Object.values(client), (err) => {
         if (err) {

@@ -10,44 +10,43 @@
   <body>
     <img class="body-bg" src="./media/img/white-sand.jpg">
     <img class="SDC-logo" src="./media/img/SDC-logo.png">
-    <div class="container col-12">
-      <div class="row">
-<div class="formWrapper">
-    <form id="clientForm">Formulääääär här</form>
-    <label for="companyName">Företagsnamn</label>
-      <input type="text" name="companyName" placeholder="Företagsnamn" id="companyName" class="textfield"></input><br>
+      <div class="container col-12">
+        <div class="row">
+          <div class="formWrapper">
+            <form id="clientForm">Formulääääär här</form>
+              <label for="companyName">Företagsnamn</label>
+                <input type="text" name="companyName" placeholder="Företagsnamn" id="companyName" class="textfield"></input><br>
 
-    <label for="contact">Kontaktperson</label>
-      <input type="text" name="contact" placeholder="Kontaktperson" id="contact" class="textfield"></input><br>
+              <label for="contactName">Kontaktperson</label>
+                <input type="text" name="contactName" placeholder="Kontaktperson" id="contactName" class="textfield"></input><br>
 
-    <label for="contactEmail">Mail</label>
-      <input type="text" name="contactEmail" placeholder="xxxxx@gmail.com" id="contactEmail" class="textfield"></input><br>
-      
-    <label for="project">Typ av projekt</label>
-      <input type="text" name="project" placeholder="Typ av projekt" id="project" class="textfield"></input><br>
+              <label for="contactEmail">Mail</label>
+                <input type="text" name="contactEmail" placeholder="xxxxx@gmail.com" id="contactEmail" class="textfield"></input><br>
+                
+              <label for="projectType">Typ av projekt</label>
+                <input type="text" name="projectType" placeholder="Typ av projekt" id="projectType" class="textfield"></input><br>
 
-    <label for="projectTime">Projekttid</label>  
-      <input type="text" name="projectTime" placeholder="xx veckor" id="projectTime" class="textfield"></input><br>
-  
-        <label for="color" class="labelDropMenu">Annonsfärg</label>
-        <select class="dropdownMenu" name="color">
-          <option value="purple">Lila</option>
-          <option value="green">Grön</option>
-          <option value="gray">Grå</option>
-          <option value="red">Röd</option>
-          <option value="yellow">Gul</option>
-        </select>
-        <button id="buttonRemove" class="button" type="reset"
-        name="clearUserForm" >Rensa formulär</button>
-        <button id="buttonSubmit" class="button" type="submit"
-        name="submitUserForm" >Skicka in</button>
+              <label for="projectLength">Projekttid</label>  
+                <input type="text" name="projectLength" placeholder="xx veckor" id="projectLength" class="textfield"></input><br>
+            
+                  <label for="color" class="labelDropMenu">Annonsfärg</label>
+                  <select class="dropdownMenu" name="color">
+                    <option value="purple">Lila</option>
+                    <option value="green">Grön</option>
+                    <option value="gray">Grå</option>
+                    <option value="red">Röd</option>
+                    <option value="yellow">Gul</option>
+                  </select>
+                  <button id="buttonRemove" class="button" type="reset"
+                  name="clearUserForm" >Rensa formulär</button>
+                  <button id="buttonSubmit" class="button" type="submit"
+                  name="submitUserForm" >Skicka in</button>
+        
+            </form>
+          </div>  
+        </div>
       </div>
-
-    
-  </form>
-</div>
-</div>
-<div id="cardContainer" class="col-12"></div>
+    <div id="cardContainer" class="col-12"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src ="./script.js"></script>
