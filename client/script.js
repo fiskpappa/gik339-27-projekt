@@ -44,7 +44,7 @@ clientForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(e) {
   e.preventDefault();
-/*   console.log(userForm.companyName.value); */
+/*   console.log(clientForm.companyName.value); */
   const serverClientObject = {
     companyName: '',
     contactName: '',
@@ -61,6 +61,7 @@ function handleSubmit(e) {
   serverClientObject.color = clientForm.color.value;
   
   console.log(serverClientObject);
+
   const request = new Request(url, {
     method: 'POST',
     headers: {

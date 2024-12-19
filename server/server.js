@@ -119,7 +119,7 @@ server.delete('/clients/:id', (req, res) => {
   });
 });
 
-server.delete('/clients/:id/:companyName/:contactName/:contactEmail/:projectType/:projectLength/:companyColor', (req, res) => {
+server.delete('/clients/:id/:companyName/:contactName/:contactEmail/:projectType/:projectLength/:Color', (req, res) => {
     const id = req.params.id;
     const sql = `DELETE FROM clients WHERE id = ${id}`;
 
