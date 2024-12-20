@@ -32,6 +32,44 @@ function fetchData() {
     });
 }
 
+/* console.log(clientForm);
+clientForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(e) {
+  e.preventDefault();
+/*   console.log(clientForm.companyName.value); */
+  const serverClientObject = {
+    companyName: '',
+    contactName: '',
+    contactEmail: '',
+    projectType: '',
+    projectLength: '',
+    color: ''
+  };
+  serverClientObject.companyName = clientForm.companyName.value;
+  serverClientObject.contactName = clientForm.contactName.value;
+  serverClientObject.contactEmail = clientForm.contactEmail.value;
+  serverClientObject.projectType = clientForm.projectType.value;
+  serverClientObject.projectLength = clientForm.projectLength.value;
+  serverClientObject.color = clientForm.color.value;
+  
+  console.log(serverClientObject);
+
+  const request = new Request(url, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(serverClientObject)
+  });
+  
+  fetch(request).then((response) => {
+    fetchData();
+    clientForm.reset();
+    });
+  
+} */
+
 function setCurrentClient(id) {
   console.log('current', id);
 }

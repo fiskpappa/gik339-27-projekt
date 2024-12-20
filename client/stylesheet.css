@@ -1,3 +1,4 @@
+
 .body-bg {
     position: absolute;
     min-height: 100vh;
@@ -38,6 +39,8 @@
 #clientForm {
     font-size: 1.3rem;
     text-transform: uppercase;
+    font-size: 2rem;
+ /*    text-transform: uppercase; */
     color: rgb(red, green, blue);
 }
 

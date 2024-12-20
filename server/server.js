@@ -108,3 +108,17 @@ server.delete('/clients/:id', (req, res) => {
   });
 });
 
+server.delete('/clients/:id/:companyName/:contactName/:contactEmail/:projectType/:projectLength/:Color', (req, res) => {
+    const id = req.params.id;
+    const sql = `DELETE FROM clients WHERE id = ${id}`;
+
+    db.run(sql, (err) => {
+        if(err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.send('Annons borttagen');
+        }
+    })
+});
+
