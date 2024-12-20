@@ -63,7 +63,6 @@ server.post('/client', (req, res) => {
 
 server.put('/client/:id', (req, res) => {
     const bodyData = req.body;
-  
     const id = bodyData.id;
     const client = {
       companyName: bodyData.companyName,
