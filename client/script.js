@@ -32,12 +32,13 @@ function fetchData() {
     });
 }
 
-/* console.log(clientForm);
+console.log(clientForm);
 clientForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(e) {
   e.preventDefault();
-/*   console.log(clientForm.companyName.value); */
+   console.log(clientForm.companyName.value); */
+
   const serverClientObject = {
     companyName: '',
     contactName: '',
