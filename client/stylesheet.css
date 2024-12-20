@@ -23,7 +23,8 @@ body
     padding: 2rem;
     border-radius: 1rem;
     font-family: Helvetica, Arial, sans-serif;
-    background-color: #AF9CEA;
+    background: linear-gradient(#AF9CEA, #7e6db3) ;
+    box-shadow: 0 6px 6px 0 #51457575; 
   
 /*     font-weight: 600; */
     /* color: rgb(72, 72, 72); */

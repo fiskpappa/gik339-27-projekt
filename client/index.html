@@ -9,31 +9,35 @@
   </head>
   <body>
     <header>
-      <img class="header" src="./media/img/otto.jpeg">
+      <img class="header" src="./media/img/color-bg.png">
     </header>
 
     <img class="SDC-logo" src="./media/img/SDC-logo.png">
 
       <div class="container">
         <div class="row">
-          <div class="formWrapper col-8 mx-auto">
+          <div class="formWrapper col-8 mx-auto offset-1">
             <img src="./media/img/SDC-logo.png" class="SDC-logo card-img-top">
         
-            <form id="clientForm" class="card-body">
-              <label class="offset-md-1 fs-5" for="companyName">Företagsnamn</label>
-                <input type="text" name="companyName" placeholder="Företagsnamn" id="companyName" class="textfield fs-4 p-2 col-sm-10 col-md-6 offset-md-1 col-lg-5 mb-2"></input><br>
+            <form id="clientForm" class="row col-10 offset-1">
+              <div class="form-group row col-12">
+                <label class="fs-5 col-md-6" for="companyName">Företagsnamn</label>
+                  <input type="text" name="companyName" placeholder="Företagsnamn" id="companyName" class="textfield fs-4 p-2 mb-2 col-md-6"></input>
+              </div>
 
-              <label class="offset-md-1 fs-5" for="contactName">Kontaktperson</label>
-                <input type="text" name="contactName" placeholder="Kontaktperson" id="contactName" class="textfield fs-4 p-2 col-sm-10 col-md-6 offset-md-1 col-lg-5 mb-2"></input><br>
+              <div class="form-group row col-12">
+                <label class="fs-5" for="contactName">Kontaktperson</label>
+                  <input type="text" name="contactName" placeholder="Kontaktperson" id="contactName" class="textfield fs-4 p-2 mb-2"></input>
+              </div>
 
               <label class="offset-md-1 fs-5" for="contactEmail">Mail</label>
-                <input type="text" name="contactEmail" placeholder="xxxxx@gmail.com" id="contactEmail" class="textfield fs-4 p-2 col-sm-10 col-md-6 offset-md-3 col-lg-5 offset-lg-4 offset-xl-3 mb-2"></input><br>
+                <input type="text" name="contactEmail" placeholder="xxxxx@gmail.com" id="contactEmail" class="textfield fs-4 p-2 col-sm-10 col-md-6 offset-md-3 col-lg-5 offset-lg-4 offset-xl-3 mb-2"></input>
                 
               <label class="offset-md-1 fs-5" for="projectType">Typ av projekt</label>
-                <input type="text" name="projectType" placeholder="Typ av projekt" id="projectType" class="textfield fs-4 p-2 col-sm-10 col-md-6 offset-md-1 col-lg-5 mb-2"></input><br>
+                <input type="text" name="projectType" placeholder="Typ av projekt" id="projectType" class="textfield fs-4 p-2 col-sm-10 col-md-6 offset-md-1 col-lg-5 mb-2"></input>
 
               <label class="offset-md-1 fs-5" for="projectLength">Projekttid</label>  
-                <input type="text" name="projectLength" placeholder="xx veckor" id="projectLength" class="textfield fs-4 p-2 col-sm-10 col-md-6 offset-md-2 col-lg-5 offset-lg-2 mb-2"></input><br>
+                <input type="text" name="projectLength" placeholder="xx veckor" id="projectLength" class="textfield fs-4 p-2 col-sm-10 col-md-6 offset-md-2 col-lg-5 offset-lg-2 mb-2"></input>
             
                   <label class="offset-md-1 fs-5" for="color" class="labelDropMenu">Annonsfärg</label>
                   <select class="dropdownMenu fs-8" name="color">
@@ -48,7 +52,8 @@
                   <button id="remove" class="button btn rounded-3 bg-white" type="reset"
                   name="clearClientForm">Rensa formulär</button>
                   <button id="submit" class="button btn rounded-3 bg-white" type="submit"
-                  name="submitClientForm" >Skicka in</button>      
+                  name="submitClientForm" >Skicka in</button>   
+                   
             </form>
           </div>  
         </div>

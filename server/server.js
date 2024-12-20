@@ -17,8 +17,8 @@ server
  server.listen(3000, () => {
     console.log('Server running on http://localhost:3000');
  });
-
-server.get('/clients', (req, res) => {
+/* get all */
+server.get('/client', (req, res) => {
     const sql = 'SELECT * FROM clients';
 
     db.all(sql, (err, rows) => {
@@ -30,6 +30,7 @@ server.get('/clients', (req, res) => {
     });
 });
 
+/* get one */
 server.get('/client/:id', (req, res) => {
     const id = req.params.id;
     const sql = `SELECT * FROM clients WHERE id=${id}`; 
@@ -44,7 +45,7 @@ server.get('/client/:id', (req, res) => {
   });
 
  
-server.post('/clients', (req, res) => {
+server.post('/client', (req, res) => {
     const client = req.body;
     const sql = `INSERT INTO clients(companyName, contactName, contactEmail, projectType, projectLength, color) VALUES 
     (?,?,?,?,?,?)`;
@@ -60,7 +61,7 @@ server.post('/clients', (req, res) => {
 });
 
 
-server.put('/clients', (req, res) => {
+server.put('/client/:id', (req, res) => {
     const bodyData = req.body;
   
     const id = bodyData.id;
@@ -92,7 +93,7 @@ server.put('/clients', (req, res) => {
   });
 
 
-server.delete('/clients/:id', (req, res) => {
+server.delete('/client/:id', (req, res) => {
   const id = req.params.id;
   const sql = `DELETE FROM clients WHERE id = ${id}`;
 

@@ -1,4 +1,4 @@
-const url = 'http://localhost:3000/clients';
+const url = 'http://localhost:3000/client';
 
 window.addEventListener('load', fetchData);
 
@@ -37,6 +37,7 @@ function setCurrentClient(id) {
   fetch(`${url}/${id}`).then((result) => result.json()).then((client) => {
       console.log(client);
       clientForm.companyName.value = client.companyName;
+      clientForm.contactName.value = client.contactName;
       clientForm.contactEmail.value = client.contactEmail;
       clientForm.projectType.value = client.projectType;
       clientForm.projectLength.value = client.projectLength;
