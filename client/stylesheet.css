@@ -1,10 +1,12 @@
 
-.body-bg {
+ .header {
     position: absolute;
     min-height: 100vh;
     min-width: 100vw;
     z-index: -1;
-}
+} 
+
+body
 
 .SDC-logo {
     display: block;
@@ -17,12 +19,14 @@
 .formWrapper {
     width: 50%;
     margin: 5rem;
-    background-color: rgba(247, 157, 12, 0.26);
+/*     background-color: rgba(247, 157, 12, 0.26); */
     padding: 2rem;
     border-radius: 1rem;
     font-family: Helvetica, Arial, sans-serif;
-    font-weight: 600;
-    color: rgb(72, 72, 72);
+    background-color: #AF9CEA;
+  
+/*     font-weight: 600; */
+    /* color: rgb(72, 72, 72); */
 }
 
 .dropdownMenu {
@@ -32,46 +36,46 @@
 }
 
 .labelDropMenu {
-    color: rgb(72, 72, 72);
+   /*  color: rgb(72, 72, 72); */
     font-family: Helvetica, Arial, sans-serif;
 
 }
 #clientForm {
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    font-size: 2rem;
+  /*   font-size: .6rem; */
+ 
+    /* font-size: 2rem; */
  /*    text-transform: uppercase; */
     color: rgb(red, green, blue);
 }
 
-.button {
+/*  .button {
     margin: .5rem;
     border: .6rem;
     border-color: rgb(195, 195, 195);
     border-radius: .3rem;
     padding: .3rem;
     font-family: Helvetica, Arial, sans-serif;
-}
+} */
 
-.button:hover {
+ .button:hover {
     background-color: rgb(255, 255, 255);
     box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24),
                 0 6px 6px 0 rgba(0,0,0,0.24);
     transition: 0.3s;
     transform: scale(1.05);
-}
+} 
 
-.button:active {
+ .button:active {
     transform: scale(0.95);
 }
 
-.textfield {
+/* .textfield {
     padding: .2rem;
     border-radius: .5rem;
     margin: .2rem;
     border: .05rem;
     grid-row-start: 4;
-}
+} */
 
 .clientCard {
     background-color: rgba(245, 245, 220, 0.452);
@@ -80,3 +84,4 @@
 #form {
     font-size: 2rem;
 }
+
