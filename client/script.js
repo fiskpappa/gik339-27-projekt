@@ -1,4 +1,4 @@
-const url = 'http://localhost:3000/clients';
+const url = 'http://localhost:3000/client';
 
 window.addEventListener('load', fetchData);
 
@@ -37,6 +37,7 @@ function setCurrentClient(id) {
   fetch(`${url}/${id}`).then((result) => result.json()).then((client) => {
       console.log(client);
       clientForm.companyName.value = client.companyName;
+      clientForm.contactName.value = client.contactName;
       clientForm.contactEmail.value = client.contactEmail;
       clientForm.projectType.value = client.projectType;
       clientForm.projectLength.value = client.projectLength;
@@ -49,7 +50,11 @@ function setCurrentClient(id) {
 function deleteClient(id) {
     console.log('delete', id);
     fetch(`${url}/${id}`, { method: 'DELETE' }).then((result) => fetchData());
+<<<<<<< HEAD
   }  
+=======
+  } 
+>>>>>>> 33a44dbcd98415ce346b3731bfb57f22275f80a1
 
 clientForm.addEventListener('submit', handleSubmit);
 
