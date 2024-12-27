@@ -17,11 +17,7 @@ server
  server.listen(3000, () => {
     console.log('Server running on http://localhost:3000');
  });
-<<<<<<< HEAD
 
-=======
-/* get all */
->>>>>>> 33a44dbcd98415ce346b3731bfb57f22275f80a1
 server.get('/client', (req, res) => {
     const sql = 'SELECT * FROM clients';
 
