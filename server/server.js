@@ -18,7 +18,7 @@ server
     console.log('Server running on http://localhost:3000');
  });
 
-server.get('/clients', (req, res) => {
+server.get('/client', (req, res) => {
     const sql = 'SELECT * FROM clients';
 
     db.all(sql, (err, rows) => {
