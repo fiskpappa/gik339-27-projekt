@@ -90,4 +90,4 @@ function handleSubmit(e) {
 
     localStorage.removeItem('currentId');
     clientForm.reset();  
-    }); 
+    })}
