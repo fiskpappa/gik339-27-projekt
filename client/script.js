@@ -16,9 +16,10 @@ function fetchData() {
           <p class="my-2" style="color:rgb(61, 58, 59);"><b>Email:</b> ${client.contactEmail}</p>
           <p class="my-2" style="color:rgb(61, 58, 59);"><b>Projekttyp:</b> ${client.projectType}</p>
           <p class="my-2" style="color:rgb(61, 58, 59);"><b>Projektlängd:</b> ${client.projectLength} veckor</p>
-          <div>
+          <div class="d-flex">
             <button class="button btn rounded-3 bg-white" onclick="setCurrentClient(${client.id})">Ändra</button>
-            <button class="button btn rounded-3 bg-white" onclick="deleteClient(${client.id})">Ta bort</button>
+            <button class="button ms-2 btn rounded-3 bg-white" onclick="setCurrentClient(${client.id})">Kontakt</button>
+            <button class="button ms-auto btn rounded-3 bg-white bg-opacity-90 text-secondary text-opacity-50" onclick="deleteClient(${client.id})">Ta bort</button>
           </div>
         </li>`;
         });
