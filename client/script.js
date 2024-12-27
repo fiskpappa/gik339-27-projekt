@@ -50,11 +50,7 @@ function setCurrentClient(id) {
 function deleteClient(id) {
     console.log('delete', id);
     fetch(`${url}/${id}`, { method: 'DELETE' }).then((result) => fetchData());
-<<<<<<< HEAD
-  }  
-=======
-  } 
->>>>>>> 33a44dbcd98415ce346b3731bfb57f22275f80a1
+}
 
 clientForm.addEventListener('submit', handleSubmit);
 
@@ -67,7 +63,7 @@ function handleSubmit(e) {
     projectType: '',
     projectLength: '',
     color: ''
-  };
+  }
 
   serverClientObject.companyName = clientForm.companyName.value;
   serverClientObject.contactName = clientForm.contactName.value;
@@ -95,4 +91,3 @@ function handleSubmit(e) {
     localStorage.removeItem('currentId');
     clientForm.reset();  
     }); 
-}
