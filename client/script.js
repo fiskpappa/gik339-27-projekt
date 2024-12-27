@@ -47,10 +47,10 @@ function setCurrentClient(id) {
     });
 }
 
-/* function deleteClient(id) {
+function deleteClient(id) {
     console.log('delete', id);
     fetch(`${url}/${id}`, { method: 'DELETE' }).then((result) => fetchData());
-  }  */
+  } 
 
 clientForm.addEventListener('submit', handleSubmit);
 

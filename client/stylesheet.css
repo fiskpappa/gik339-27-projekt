@@ -6,6 +6,10 @@
     z-index: -1;
 } 
 
+a {
+    align-items: end;
+}
+
 .SDC-logo {
     display: block;
     z-index: 1;
