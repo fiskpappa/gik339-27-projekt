@@ -10,16 +10,16 @@ function fetchData() {
         let html = `<ul class="list-unstyled row gap-2">`;
         clients.forEach((client) => {
           html += `
-        <li class="clientCard col-xs-10 col-sm-10 col-md-5 col-xl-3 p-3 rounded-4 bg-light">
+        <li class="clientCard col-xs-10 col-sm-10 col-md-5 col-xl-3 p-3 rounded-4 bg-light d-flex flex-column">
           <h3 class="colorChanger" style="color: ${client.color};">${client.companyName}</h3>
-          <p class="my-2" style="color:rgb(61, 58, 59);"><b>Kontaktperson:</b> ${client.contactName}</p>
-          <p class="my-2" style="color:rgb(61, 58, 59);"><b>Email:</b> ${client.contactEmail}</p>
-          <p class="my-2" style="color:rgb(61, 58, 59);"><b>Projekttyp:</b> ${client.projectType}</p>
-          <p class="my-2" style="color:rgb(61, 58, 59);"><b>Projektlängd:</b> ${client.projectLength} veckor</p>
-          <div class="d-flex">
+          <p class="mb-2" style="color:rgb(61, 58, 59);"><b>Kontaktperson:</b> ${client.contactName}</p>
+          <p class="mb-2" style="color:rgb(61, 58, 59);"><b>Email:</b> ${client.contactEmail}</p>
+          <p class="mb-2" style="color:rgb(61, 58, 59);"><b>Projekttyp:</b> ${client.projectType}</p>
+          <p class="mb-5" style="color:rgb(61, 58, 59);"><b>Projektlängd:</b> ${client.projectLength} veckor</p>
+          <div class="d-flex mt-auto">
             <button class="button btn rounded-3 bg-white" onclick="setCurrentClient(${client.id})">Ändra</button>
             <button class="button ms-2 btn rounded-3 bg-white" onclick="setCurrentClient(${client.id})">Kontakt</button>
-            <button class="button ms-auto btn rounded-3 bg-white bg-opacity-90 text-secondary text-opacity-50" onclick="deleteClient(${client.id})">Ta bort</button>
+            <button class="button ms-auto btn rounded-3 bg-white bg-opacity-90 text-danger text-opacity-50" onclick="deleteClient(${client.id})">Ta bort</button>
           </div>
         </li>`;
         });

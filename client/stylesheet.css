@@ -1,21 +1,23 @@
+html {
+    scroll-behavior: smooth;
+}
 
- .header {
-    position: absolute;
-    min-height: 100%;
-    min-width: 100vw;
-    z-index: -1;
-} 
+body {
+    background-image: url(./media/img/color-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
-a {
-    align-items: end;
+.about {
+    background-color: rgba(236, 228, 255, 0.568);
 }
 
 .SDC-logo {
     display: block;
     z-index: 1;
-    margin-top: -5rem;
-    margin-left: -5rem;
-    width: 70%;
+    margin-left: 2rem;
+    width: 50%;
 }
 
 .formWrapper {
@@ -26,7 +28,7 @@ a {
     border-radius: 1rem;
     font-family: Helvetica, Arial, sans-serif;
     background: linear-gradient(135deg, #e9e5f5, #ad9fd6) ;
-    box-shadow: 0 6px 6px 0 #51457575; 
+/*     box-shadow: 0 6px 6px 0 #51457575;  */
   
 /*     font-weight: 600; */ 
     /* color: rgb(72, 72, 72); */ 
