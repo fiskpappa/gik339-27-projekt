@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -9,6 +10,22 @@ body {
     background-position: center;
 }
 
+.infoContainer {
+    min-height: 15rem;
+}
+
+.formSection {
+    margin-bottom: 10rem;
+}
+
+.contactSection {
+    margin-top: 10rem;
+}
+
+li h3 {
+    min-height: 2rem;
+}
+
 .about {
     background-color: rgba(236, 228, 255, 0.568);
 }
@@ -16,51 +33,24 @@ body {
 .SDC-logo {
     display: block;
     z-index: 1;
-    margin-left: 2rem;
-    width: 50%;
+    margin-left: 5rem;
+    width: 35%;
+    margin-bottom: 10rem;
 }
 
 .formWrapper {
-    width: 50%;
-    margin: 5rem;
-/*     background-color: rgba(247, 157, 12, 0.26); */
-    padding: 2rem;
-    border-radius: 1rem;
-    font-family: Helvetica, Arial, sans-serif;
     background: linear-gradient(135deg, #e9e5f5, #ad9fd6) ;
-/*     box-shadow: 0 6px 6px 0 #51457575;  */
-  
-/*     font-weight: 600; */ 
-    /* color: rgb(72, 72, 72); */ 
 }
 
 .dropdownMenu {
-    width:5rem;
-    border-radius: 0.3rem;
-    padding: .2rem;
+/*     width:5rem; */
+/*     border-radius: 0.3rem; */
+   /*  padding: .2rem; */
 }
 
 .labelDropMenu {
-   /*  color: rgb(72, 72, 72); */
     font-family: Helvetica, Arial, sans-serif;
-
 }
-#clientForm {
-  /*   font-size: .6rem; */
- 
-    /* font-size: 2rem; */
- /*    text-transform: uppercase; */
-    color: rgb(red, green, blue);
-}
-
-/*  .button {
-    margin: .5rem;
-    border: .6rem;
-    border-color: rgb(195, 195, 195);
-    border-radius: .3rem;
-    padding: .3rem;
-    font-family: Helvetica, Arial, sans-serif;
-} */
 
  .button:hover {
     background-color: rgb(255, 255, 255);
@@ -74,19 +64,11 @@ body {
     transform: scale(0.95);
 }
 
-/* .textfield {
-    padding: .2rem;
-    border-radius: .5rem;
-    margin: .2rem;
-    border: .05rem;
-    grid-row-start: 4;
-} */
-
 .clientCard {
-    background-color: rgba(245, 245, 220, 0.452);
+    background-color: #f5f5dc73;
 }
 
 #form {
-    font-size: 2rem;
+  /*   font-size: 2rem; */
 }
 
