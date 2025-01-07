@@ -10,25 +10,32 @@ function fetchData() {
         let html = `<ul class="list-unstyled row gap-4">`;
         clients.forEach((client) => {
           html += `
-        <li class="clientCard shadow col-sm-12 col-md-5 col-xl-3 rounded-4 bg-light" style="background: linear-gradient(to top left, ${client.color},rgba(247, 255, 255, 0.63));">
+        <li class="clientCard p-0 shadow col-sm-12 col-md-5 col-xl-3 rounded-4 bg-white bg-opacity-50">
+          <header class="cardHeader p-3 py-3 rounded-top-4" >
           <h3 class="mt-2 colorChanger fw-bold" style="color:rgb(61, 58, 59);">${client.companyName}</h3>
+          </header>
           <div class="infoContainer mb-2">
-          <p class="mb-0" style="color:rgb(61, 58, 59);"><b>Kontaktperson:</b></p> 
-          <p class="mb-2" style="color:rgb(61, 58, 59);">${client.contactName}</p>  
-          <p class="mb-0" style="color:rgb(61, 58, 59);"><b>Email:</b></p> 
-          <p class="mb-2" style="color:rgb(61, 58, 59);">${client.contactEmail}</p>
-          <p class="mb-0" style="color:rgb(61, 58, 59);"><b>Projekttyp:</b></p>
-          <p class="mb-2" style="color:rgb(61, 58, 59);">${client.projectType}</p>
-          <p class="mb-0" style="color:rgb(61, 58, 59);"><b>Projektlängd:</b></p>
-          <p class="mb-2" style="color:rgb(61, 58, 59);">${client.projectLength} veckor</p>
+          <p class="mb-0 px-3 mt-2" style="color:rgb(61, 58, 59);"><b>Kontaktperson:</b></p> 
+          <p class="mb-2 px-3" style="color:rgb(61, 58, 59);">${client.contactName}</p>  
+          <p class="mb-0 px-3" style="color:rgb(61, 58, 59);"><b>Email:</b></p> 
+          <p class="mb-2 px-3" style="color:rgb(61, 58, 59);">${client.contactEmail}</p>
+          <p class="mb-0 px-3" style="color:rgb(61, 58, 59);"><b>Projekttyp:</b></p>
+          <p class="mb-2 px-3" style="color:rgb(61, 58, 59);">${client.projectType}</p>
+          <p class="mb-0 px-3" style="color:rgb(61, 58, 59);"><b>Projektlängd:</b></p>
+          <p class="mb-2 px-3" style="color:rgb(61, 58, 59);">${client.projectLength} veckor</p>
           </div>
-          <div class="d-flex mt-auto mb-3">
-            <button class="button ms-auto btn rounded-3 bg-white" onclick="setCurrentClient(${client.id}); scrollToSection('formSection');">Ändra</button>
-            <button data-bs-toggle="modal" data-bs-target="#actionModal" class="button btn ms-3 rounded-3 bg-white bg-opacity-90 text-danger text-opacity-50" onclick="deleteClient(${client.id}), e">Ta bort</button>
+          <div class="d-flex mt-auto py-3 px-2 rounded-bottom-4">
+           
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="${client.color}" class="bi bi-circle-fill" viewBox="0 0 16 16">
+          <circle cx="8" cy="8" r="8"/>
+          </svg>
+           
+          <button class="button ms-auto btn rounded-3 bg-white" onclick="setCurrentClient(${client.id}); scrollToSection('formSection');">Ändra</button>
+          <button data-bs-toggle="modal" data-bs-target="#actionModal" class="button btn ms-3 rounded-3 bg-white bg-opacity-90 text-danger text-opacity-50" onclick="deleteClient(${client.id})">Ta bort</button>
           </div>
         </li>`;
         });
-        html += `</ul>`;
+        html += `</ul>`; 
 
         const cardContainer = document.getElementById('cardContainer');
         cardContainer.innerHTML = '';
@@ -36,23 +43,6 @@ function fetchData() {
       }
     });
 }
-
-// Funktion för att hantera bilduppladdning och visa förhandsvisning
-document.getElementById('projectImage').addEventListener('change', function (event) {
-  const file = event.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-      // Här sätts bildens källa och den visas som en image cap i kortet
-      const previewImage = document.getElementById('previewImage');
-      previewImage.src = e.target.result;  // Sätt bildens källa
-      previewImage.style.display = 'block'; // Visa bilden
-    }
-
-    reader.readAsDataURL(file);  // Läs in filen och konvertera till en data-URL
-  }
-});
 
 function setCurrentClient(id) {
   console.log('Current ID:', id);
@@ -74,11 +64,24 @@ function setCurrentClient(id) {
 }
 
 function deleteClient(id) {
-    console.log('delete', id);
-    fetch(`${url}/${id}`, { method: 'DELETE' }).then((result) => fetchData());
-}
+  fetch(`${url}/${id}`, { method: 'DELETE' })
+    .then((response) => {
+      if (response.ok) {
+        fetchData();
+        showModal('Resursen har tagits bort!');
+      } else {
+        showModal('Ett fel uppstod när resursen skulle tas bort.');
+      }
+    })
+    .catch((error) => {
+      console.error('Fel vid borttagning av resurs:', error);
+      showModal('Ett oväntat fel inträffade.');
+    });
+}  
+
 
 clientForm.addEventListener('submit', handleSubmit);
+
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -117,26 +120,40 @@ function handleSubmit(e) {
     },
     body: JSON.stringify(serverClientObject)
   });
+
   
   fetch(request)
   .then((response) => {
     if (response.ok) {
       fetchData();
       localStorage.removeItem('currentId');
-      clientForm.reset();  
+      clientForm.reset();
+      showModal(id ? 'Information har uppdaterats.' : 'Företagsinformation har lagts till.');
       } else {
-        console.error('Det blev ett fel när du försökte ändra clienten');
+        console.error('Ett fel har uppstått när informationen försökte sparas.');
+        showModal('Ett fel har inträffat.')
       }
     })
     .catch((error) => console.error('Det blev ett fel när du skickade in formuläret:', error));
   }
 
-  function scrollToSection(id) {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
+
+function scrollToSection(id) {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
   }
+}
+
+function showModal(message) {
+  const feedbackMessage = document.getElementById('feedbackMessage');
+  feedbackMessage.textContent = message;
+
+  const actionModal = new bootstrap.Modal(document.getElementById('actionModal'));
+  actionModal.show();
+}
+
+

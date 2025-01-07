@@ -10,11 +10,11 @@
   <body>
     <header id="top">
       <nav class="d-flex justify-content-end gap-3 m-4">
-        <a class="link-secondary link-opacity-50-hover link-underline link-underline-opacity-0 fw-bold" href="#contact">About us</a>
-        <a class="link-secondary link-opacity-50-hover link-underline link-underline-opacity-0 fw-bold" href="#cardContainer">Companies</a>
+        <a class="link-secondary link-opacity-50-hover link-underline link-underline-opacity-0 fw-bold" href="#contact">Om oss</a>
+        <a class="link-secondary link-opacity-50-hover link-underline link-underline-opacity-0 fw-bold" href="#cardContainer">Tillgängliga jobb</a>
     </nav>
    </header>
-   <img class="SDC-logo" src="./media/img/SDC-logo.png">
+   <img class="SDC-logo" src="./media/img/SDC-logo.png"> 
 
 
 
@@ -34,40 +34,39 @@
             <form id="clientForm" class="row p-3 fs-2">
               <div class="form-group row">
                 <label class="fs-5 col-md-6" for="companyName">Företagsnamn</label>
-                  <input type="text" name="companyName" placeholder="Företagsnamn" id="companyName" class="textfield border-0 rounded-2 fs-6 p-2 mb-2"></input>
+                  <input type="text" name="companyName" placeholder=" Företaget AB" id="companyName" class="textfield pb-0 fs-6 p-2 mb-2 border-0 bg-white bg-transparent border-bottom border-2"></input>
               </div>
 
               <div class="form-group row">
                 <label class="fs-5" for="contactName">Kontaktperson</label>
-                  <input type="text" name="contactName" placeholder="Kontaktperson" id="contactName" class="textfield border-0 rounded-2 fs-6 p-2 mb-2"></input>
+                  <input type="text" name="contactName" placeholder=" Namn Namnsson" id="contactName" class="textfield pb-0 border-0 fs-6 p-2 mb-2 bg-transparent border-bottom border-2"></input>
               </div>
 
               <div class="form-group row">
               <label class="fs-5" for="contactEmail">Mail</label>
-                <input type="text" name="contactEmail" placeholder="xxxxx@gmail.com" id="contactEmail" class="textfield border-0 rounded-2 fs-6 p-2 mb-2"></input>
+                <input type="text" name="contactEmail" placeholder=" xxxxx@gmail.com" id="contactEmail" class="textfield pb-0 border-0 fs-6 p-2 mb-2 bg-transparent border-bottom border-2"></input>
               </div>
 
               <div class="form-group row">
               <label class="fs-5" for="projectType">Typ av projekt</label>
-                <input type="text" name="projectType" placeholder="Typ av projekt" id="projectType" class="textfield border-0 rounded-2 fs-6 p-2 mb-2"></input>
+                <input type="text" name="projectType" placeholder=" Typ av projekt" id="projectType" class="textfield pb-0 border-0 fs-6 p-2 mb-2 bg-transparent border-bottom border-2"></input>
               </div>
 
               <div class="form-group row">
               <label class="fs-5" for="projectLength">Projekttid</label>  
-                <input type="text" name="projectLength" placeholder="xx veckor" id="projectLength" class="textfield border-0 rounded-2 fs-6 p-2 mb-2"></input>
+                <input type="text" name="projectLength" placeholder=" xx veckor" id="projectLength" class="textfield pb-0 border-0 fs-6 p-2 mb-2 bg-transparent border-bottom border-2"></input>
               </div>
 
               <div class="form-group row">
                   <label class="fs-5" for="color" class="labelDropMenu">Annonsfärg</label>
-                    <select class="dropdownMenu fs-6 p-2 mb-4 w-5 rounded-2" name="color">
-                      <option value="#007A5A">Mörkgrön</option>
-                      <option value="#AF9CEA">Lila</option>
-                      <option value="#E6FF75">Neongrön</option>
+                    <select class="dropdownMenu fs-6 p-2 mb-4 mt-2 w-5 textfield border-0 rounded-2 bg-white bg-opacity-25" name="color">
+                      <option value="#2C6F8C">Teal</option>
+                      <option value="#D6CDF4">Lila</option>
+                      <option value="#E6FF75">Neon</option>
                       <option value="#85B8FE">Blå</option>
-                      
+                      <option value="#C3A297">NYBRUN</option>
                       <option value="#4A5559">Grå</option>
                       <option value="#952923">Mörkröd</option>
-                      <!-- <option value="#C6362F">Röd</option> -->
                       <option value="#E6CD0F">Gul</option>
                       <option value="#15B7B1">Turkos</option>
                       <option value="#2D728F">Blå</option>
@@ -75,31 +74,13 @@
                       <option value="#012351">Test 2</option>
                     </select>
               </div>
-            
-              <div class="card mb-3">
-                <!-- Bilden kommer visas här som en image cap -->
-                <img id="previewImage" class="card-img-top" src="" alt="Förhandsvisning av logotyp" style="display: none;">
-              </div>
-
-
-              <!-- Filuppladdning för bild -->
-              <div class="form-group row mb-3">
-                <label class "fs-5" for="companyLogo">Ladda upp logotyp</label>
-                <div class="input-group">
-                  <input type="file" class="form-control" id="projectImage" aria-describedby="inputGroupFileAddon" accept="image/*">
-                  <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon">Välj fil</button>
-                </div>
-              </div>
-
+          
               <div class="form-group row gap-2">
-                  <button id="remove" data-bs-toggle="modal" data-bs-target="#actionModal" class="button btn rounded-3 bg-white col-sm-12 col-md-5 offset-md-1" type="reset"
+                  <button id="remove" class="button btn rounded-3 bg-white bg-opacity-75 col-sm-12 col-md-5 offset-md-1" type="reset"
                   name="clearClientForm">Rensa formulär</button>
-                  <button id="submit" data-bs-toggle="modal" data-bs-target="#actionModal" class="button btn rounded-3 bg-white fw-bold col-sm-12 col-md-5" type="submit"
+                  <button id="submit" data-bs-toggle="modal" data-bs-target="#actionModal" class="button btn rounded-3 bg-white bg-opacity-75 fw-semibold col-sm-12 col-md-5" type="submit"
                   name="submitClientForm">Skicka in</button>
-                  <!-- Filuppladdningsknapp -->
-                  <div>
-                  <button class="btn btn-outline-secondary" type="button" id="uploadButton">Välj fil</button>
-                </div>
+        
               </div> 
                    
             </form>
@@ -108,68 +89,82 @@
       </div>
 
       <div class="container">
-    <div id="cardContainer" class="container p-0 mt-5 offset-sm-1 offset-xl-1">
+    <div id="cardContainer" class="container p-0 mt-5 offset-m-1 offset-xl-1">
     </div>
     </div>
    
     <div class="contactSection" id="contact">
-      <div class="row">
-      <div class="offset-2 col-6 p-4 fs-1">Get in touch with the team</div>
+      <div class="row px-4">
+      
+        <div class="sdcText offset-1 col-6">Vi är SDC.</div>
 
-      <div class="col mt-5">
-        <div class="contactUs col-3">
-          <img class="us" src="./media/img/norberg.jpg" style="width: 120%;">
-          <p class="col-7">Felix Norberg</p>
+      <div class="col">
+
+        <div class="contactUs col-6 position-relative m-2" >
+          <img class="rounded-2" src="./media/img/norberg.jpg" style="width: 70%;">
+          <div class="text position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
+            <p class=" fw-bold mb-1">Felix Norberg</p>
+            <p class="fw-light mb-1">Felix@Norberg.se</p>
+            <p class="fw-light">070-000 00 00</p>
+        </div>
       </div>
         
-        <div class="contactUs col-3">
-          <img class="us" src="./media/img/karlsson.jpg" style="width: 120%;">
-          <p>Louise Karlsson</p>
+        <div class="contactUs col-6 position-relative m-2">
+          <img class="rounded-2" src="./media/img/karlsson.jpg" style="width: 70%;">
+          <div class="position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
+            <p class=" fw-bold mb-1">Louise Karlsson</p>
+            <p class="fw-light mb-1">Louise@Karlsson.se</p>
+            <p class="fw-light">070-000 00 00</p>
+          </div> 
         </div>
-        
-        <div class ="contactUs col-3">  
-          <img class="us" src="./media/img/wikberg.jpg" style="width: 120%;">
-          <p>Lovisa Wikberg</p>
+                
+        <div class ="contactUs col-6 position-relative m-2">  
+          <img class="rounded-2" src="./media/img/wikberg.jpg" style="width: 70%;">
+          <div class="position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
+            <p class=" fw-bold mb-1">Lovisa Wikberg</p>
+            <p class="fw-light mb-1">Lovisa@Wikberg.se</p>
+            <p class="fw-light">070-000 00 00</p>
+          </div>
         </div>
-        
-        <div class="contactUs col-3">
-          <img class="us" src="./media/img/sandell.jpg" style="width: 120%;">
-          <p>Lovisa Sandell</p>
-        </div> 
 
-       <div class="col">
-         <div class=" col-2 bg-black">
-           <p> HEJ </p>
-        </div>
+        <div class="contactUs col-6 position-relative m-2">
+          <img class="rounded-2" src="./media/img/sandell.jpg" style="width: 70%;">
+          <div class="position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
+            <p class="fw-bold mb-1">Lovisa Sandell</p>
+            <p class="fw-light mb-1">Lovisa@Sandell.se</p>
+            <p class="fw-light">070-000 00 00</p>
+          </div>
+        </div>       
        </div>
-          
-
+        </div>
+      </div>      
       </div>  
     </div>
-
   </div>
 
-
-    <div class="modal fade" id="actionModal" tabindex="-1" role="dialog" aria-label="actionModalLabel" aria-hidden="true">
+     <div class="modal fade" id="actionModal" tabindex="1" role="dialog" aria-label="actionModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="actionModalLabel">Händelse registrerad</h5>
-          <button type="button" class="closeButton rounded-2 ms-auto" data-bs-dismiss="modal" aria-label="closeButton">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <h5 class="modal-title" id="actionModalLabel">Händelse registrerad</h5>        
+        </div>
+        <div class="modal-body">
+          <p id="feedbackMessage" class="p-2 fs-4"></p>
+        </div>
+        <div class="modal-footer">
+          <p class="text-bg-info p-2 rounded-3">Klicka utanför rutan för att gå vidare.</p>
         </div>
       </div>
       </div>
     </div>
 
-            
-
-    <footer class="mt-5 pt-5 text-center">
-      <p class="text-secondary fw-semibold fs-6 opacity-50">Felix Norberg, Lousie Karlsson, Lovisa Wikberg, Lovisa Sandell</p>
-      <a class="link-secondary link-opacity-50-hover link-underline link-underline-opacity-0 fw-bold" href="#top">Back to top</a>
+    <footer class="mt-5 pt-5 pb-3 text-center">
+      <p class="text-secondary fw-semibold fs-6 opacity-50">Felix Norberg, Louise Karlsson, Lovisa Wikberg, Lovisa Sandell</p>
+      <a class="link-secondary link-opacity-50-hover link-underline link-underline-opacity-0 fw-bold" href="#top">Tillbaka till toppen</a>
     </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEJ+M2IqR6j1e8Y7b8tGs7D3xFT7roGJRhFwGHV3Z37LeutM7H4a56T44kq2Y" crossorigin="anonymous"></script>
 <script src ="./script.js"></script>
 </body>
 </html>

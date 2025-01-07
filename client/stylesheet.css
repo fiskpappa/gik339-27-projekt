@@ -10,8 +10,28 @@ body {
     background-position: center;
 }
 
+.SDC-logo {
+    display: block;
+    z-index: 1;
+    margin-left: 10rem;
+    width: 45%;
+    margin-bottom: 8rem;
+}
+
+.sdcText {
+    font-size: 14rem;
+    line-height: 14rem;
+    font-family: impact;
+    padding-top: 6rem;
+}
+
 .infoContainer {
     min-height: 15rem;
+}
+
+.cardHeader {
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .formSection {
@@ -30,23 +50,10 @@ li h3 {
     background-color: rgba(236, 228, 255, 0.568);
 }
 
-.SDC-logo {
-    display: block;
-    z-index: 1;
-    margin-left: 5rem;
-    width: 35%;
-    margin-bottom: 10rem;
-}
-
 .formWrapper {
     background: linear-gradient(135deg, #e9e5f5, #ad9fd6) ;
 }
 
-.dropdownMenu {
-/*     width:5rem; */
-/*     border-radius: 0.3rem; */
-   /*  padding: .2rem; */
-}
 
 .labelDropMenu {
     font-family: Helvetica, Arial, sans-serif;
@@ -64,11 +71,11 @@ li h3 {
     transform: scale(0.95);
 }
 
-.clientCard {
-    background-color: #f5f5dc73;
+.textfield:focus {
+    outline: none;
 }
 
-#form {
-  /*   font-size: 2rem; */
+.textfield::placeholder {
+    opacity: .3;
+    color: black;
 }
-
