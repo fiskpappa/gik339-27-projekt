@@ -11,7 +11,7 @@ function fetchData() {
         clients.forEach((client) => {
           html += `
         <li class="clientCard p-0 shadow col-sm-12 col-md-5 col-xl-3 rounded-4 bg-white bg-opacity-50">
-          <header class="cardHeader p-3 py-3 rounded-top-4" >
+          <header class="cardHeader p-3 py-3 rounded-top-4 mb-3" style="border-bottom: solid .25rem ${client.color};">
           <h3 class="mt-2 colorChanger fw-bold" style="color:rgb(61, 58, 59);">${client.companyName}</h3>
           </header>
           <div class="infoContainer mb-2">
@@ -25,13 +25,11 @@ function fetchData() {
           <p class="mb-2 px-3" style="color:rgb(61, 58, 59);">${client.projectLength} veckor</p>
           </div>
           <div class="d-flex mt-auto py-3 px-2 rounded-bottom-4">
-           
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="${client.color}" class="bi bi-circle-fill" viewBox="0 0 16 16">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="${client.color}" class="bi bi-circle-fill ms-3" viewBox="0 0 16 16">
           <circle cx="8" cy="8" r="8"/>
           </svg>
-           
-          <button class="button ms-auto btn rounded-3 bg-white" onclick="setCurrentClient(${client.id}); scrollToSection('formSection');">Ändra</button>
-          <button data-bs-toggle="modal" data-bs-target="#actionModal" class="button btn ms-3 rounded-3 bg-white bg-opacity-90 text-danger text-opacity-50" onclick="deleteClient(${client.id})">Ta bort</button>
+          <button class="button shadow-sm ms-auto btn rounded-3 bg-white" onclick="setCurrentClient(${client.id}); scrollToSection('formSection');">Ändra</button>
+          <button data-bs-toggle="modal" data-bs-target="#actionModal" class="shadow-sm button btn mx-3 rounded-3 bg-white text-danger" onclick="deleteClient(${client.id})">Ta bort</button>
           </div>
         </li>`;
         });

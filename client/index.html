@@ -7,164 +7,174 @@
     <link rel="stylesheet" href="./stylesheet.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
-  <body>
-    <header id="top">
-      <nav class="d-flex justify-content-end gap-3 m-4">
-        <a class="link-secondary link-opacity-50-hover link-underline link-underline-opacity-0 fw-bold" href="#contact">Om oss</a>
-        <a class="link-secondary link-opacity-50-hover link-underline link-underline-opacity-0 fw-bold" href="#cardContainer">Tillgängliga jobb</a>
-    </nav>
-   </header>
-   <img class="SDC-logo" src="./media/img/SDC-logo.png"> 
-
-
-
-      <div class="container formSection" id="formSection">
-        <div class="row align-items-start">
-          <div class="about col-4 p-4 rounded-4 shadow"> 
-            <p>Student Design Collective är en plattform som kopplar samman företag med designstudenter. 
-              Företag kan enkelt lägga upp mindre designprojekt i en databas, som studenter sedan kan 
-              ta åt sig för att utveckla sina färdigheter och bygga sin portfolio. Tjänsten ger företag tillgång 
-              till kreativ talang till ett överkomligt pris, samtidigt som studenter får värdefull arbetslivserfarenhet 
-              och möjlighet att nätverka inom branschen. Ett perfekt sätt att förena lärande med verkliga projekt! // ChatGPT</p>
-          </div>
-
-          <div class="formWrapper col-6 mx-auto p-4 shadow w-50 ms-5 p-2 rounded-3">
-            <!-- <img src="./media/img/SDC-logo.png" class="SDC-logo card-img-top"> -->
-        
-            <form id="clientForm" class="row p-3 fs-2">
-              <div class="form-group row">
-                <label class="fs-5 col-md-6" for="companyName">Företagsnamn</label>
-                  <input type="text" name="companyName" placeholder=" Företaget AB" id="companyName" class="textfield pb-0 fs-6 p-2 mb-2 border-0 bg-white bg-transparent border-bottom border-2"></input>
-              </div>
-
-              <div class="form-group row">
-                <label class="fs-5" for="contactName">Kontaktperson</label>
-                  <input type="text" name="contactName" placeholder=" Namn Namnsson" id="contactName" class="textfield pb-0 border-0 fs-6 p-2 mb-2 bg-transparent border-bottom border-2"></input>
-              </div>
-
-              <div class="form-group row">
-              <label class="fs-5" for="contactEmail">Mail</label>
-                <input type="text" name="contactEmail" placeholder=" xxxxx@gmail.com" id="contactEmail" class="textfield pb-0 border-0 fs-6 p-2 mb-2 bg-transparent border-bottom border-2"></input>
-              </div>
-
-              <div class="form-group row">
-              <label class="fs-5" for="projectType">Typ av projekt</label>
-                <input type="text" name="projectType" placeholder=" Typ av projekt" id="projectType" class="textfield pb-0 border-0 fs-6 p-2 mb-2 bg-transparent border-bottom border-2"></input>
-              </div>
-
-              <div class="form-group row">
-              <label class="fs-5" for="projectLength">Projekttid</label>  
-                <input type="text" name="projectLength" placeholder=" xx veckor" id="projectLength" class="textfield pb-0 border-0 fs-6 p-2 mb-2 bg-transparent border-bottom border-2"></input>
-              </div>
-
-              <div class="form-group row">
-                  <label class="fs-5" for="color" class="labelDropMenu">Annonsfärg</label>
-                    <select class="dropdownMenu fs-6 p-2 mb-4 mt-2 w-5 textfield border-0 rounded-2 bg-white bg-opacity-25" name="color">
-                      <option value="#2C6F8C">Teal</option>
-                      <option value="#D6CDF4">Lila</option>
-                      <option value="#E6FF75">Neon</option>
-                      <option value="#85B8FE">Blå</option>
-                      <option value="#C3A297">NYBRUN</option>
-                      <option value="#4A5559">Grå</option>
-                      <option value="#952923">Mörkröd</option>
-                      <option value="#E6CD0F">Gul</option>
-                      <option value="#15B7B1">Turkos</option>
-                      <option value="#2D728F">Blå</option>
-                      <option value="#CE4760">Brun</option>
-                      <option value="#012351">Test 2</option>
-                    </select>
-              </div>
-          
-              <div class="form-group row gap-2">
-                  <button id="remove" class="button btn rounded-3 bg-white bg-opacity-75 col-sm-12 col-md-5 offset-md-1" type="reset"
-                  name="clearClientForm">Rensa formulär</button>
-                  <button id="submit" data-bs-toggle="modal" data-bs-target="#actionModal" class="button btn rounded-3 bg-white bg-opacity-75 fw-semibold col-sm-12 col-md-5" type="submit"
-                  name="submitClientForm">Skicka in</button>
-        
-              </div> 
-                   
-            </form>
-          </div>  
-        </div>
-      </div>
-
-      <div class="container">
-    <div id="cardContainer" class="container p-0 mt-5 offset-m-1 offset-xl-1">
+<body>
+  <header id="top">
+    <div class="dropdown d-flex justify-content-end">
+    <button class="btn dropdown-toggle m-4 border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg"  class="bi bi-list" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+      </svg>
+    </button>
+        <ul class="dropdown-menu px-3 py-3 bg-white bg-opacity-25 border-0 fs-5 lh-lg">
+          <li><a class="link-dark link-opacity-50-hover link-underline link-underline-opacity-0  " href="#contact">Teamet</a></li>
+          <li><a class="link-dark link-opacity-50-hover link-underline link-underline-opacity-0 " href="#cardContainer">Tillgängliga jobb</a></li>
+        </ul>
     </div>
-    </div>
-   
-    <div class="contactSection" id="contact">
-      <div class="row px-4">
-      
-        <div class="sdcText offset-1 col-6">Vi är SDC.</div>
+  </header>
 
-      <div class="col">
+  <img class="SDC-logo" src="./media/img/SDC-logo.png"> 
 
-        <div class="contactUs col-6 position-relative m-2" >
-          <img class="rounded-2" src="./media/img/norberg.jpg" style="width: 70%;">
-          <div class="text position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
-            <p class=" fw-bold mb-1">Felix Norberg</p>
-            <p class="fw-light mb-1">Felix@Norberg.se</p>
-            <p class="fw-light">070-000 00 00</p>
-        </div>
-      </div>
-        
-        <div class="contactUs col-6 position-relative m-2">
-          <img class="rounded-2" src="./media/img/karlsson.jpg" style="width: 70%;">
-          <div class="position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
-            <p class=" fw-bold mb-1">Louise Karlsson</p>
-            <p class="fw-light mb-1">Louise@Karlsson.se</p>
-            <p class="fw-light">070-000 00 00</p>
-          </div> 
+    <div class="container formSection" id="formSection">
+      <div class="row align-items-start gap-4 offset-1">
+        <div class="about p-5 rounded-4 shadow mb-5 fs-5 fw-light offset-sm-1 offset-lg-0 col-sm-9 col-lg-4"> 
+          <p>Student Design Collective är en plattform som kopplar samman företag med designstudenter. 
+            Företag kan enkelt lägga upp mindre designprojekt i en databas, som studenter sedan kan 
+            ta åt sig för att utveckla sina färdigheter och bygga sin portfolio. Tjänsten ger företag tillgång 
+            till kreativ talang till ett överkomligt pris, samtidigt som studenter får värdefull arbetslivserfarenhet 
+            och möjlighet att nätverka inom branschen. Ett perfekt sätt att förena studenter med företag.</p>
         </div>
                 
-        <div class ="contactUs col-6 position-relative m-2">  
-          <img class="rounded-2" src="./media/img/wikberg.jpg" style="width: 70%;">
-          <div class="position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
-            <p class=" fw-bold mb-1">Lovisa Wikberg</p>
-            <p class="fw-light mb-1">Lovisa@Wikberg.se</p>
-            <p class="fw-light">070-000 00 00</p>
-          </div>
-        </div>
+        <div class="formWrapper col-sm-9 offset-sm-1 col-lg-5 p-4 shadow p-2 rounded-3">
+         <form id="clientForm" class="row p-3 fs-2">
+            <div class="form-group row">
+              <label class="fs-5 pt-2" for="companyName">Företagsnamn</label>
+                <input class="textfield pb-0 fs-6 ps-2 mb-2 border-0 bg-white bg-transparent border-bottom border-2" type="text" name="companyName" placeholder=" Företaget AB" id="companyName"></input>
+            </div>
 
-        <div class="contactUs col-6 position-relative m-2">
-          <img class="rounded-2" src="./media/img/sandell.jpg" style="width: 70%;">
-          <div class="position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
-            <p class="fw-bold mb-1">Lovisa Sandell</p>
-            <p class="fw-light mb-1">Lovisa@Sandell.se</p>
-            <p class="fw-light">070-000 00 00</p>
-          </div>
-        </div>       
-       </div>
-        </div>
-      </div>      
-      </div>  
+            <div class="form-group row">
+              <label class="fs-5 pt-2" for="contactName">Kontaktperson</label>
+                <input class="textfield pb-0 border-0 fs-6 ps-2 mb-2 bg-transparent border-bottom border-2" type="text" name="contactName" placeholder=" Namn Namnsson" id="contactName"></input>
+            </div>
+
+            <div class="form-group row">
+            <label class="fs-5 pt-2" for="contactEmail">Mail</label>
+              <input class="textfield pb-0 border-0 fs-6 ps-2 mb-2 bg-transparent border-bottom border-2" type="text" name="contactEmail" placeholder=" xxxxx@gmail.com" id="contactEmail"></input>
+            </div>
+
+            <div class="form-group row">
+            <label class="fs-5 pt-2" for="projectType">Typ av projekt</label>
+              <input class="textfield pb-0 border-0 fs-6 ps-2 mb-2 bg-transparent border-bottom border-2" type="text" name="projectType" placeholder=" T.ex. trycksaker, web, grafisk profil." id="projectType"></input>
+            </div>
+
+            <div class="form-group row">
+            <label class="fs-5 pt-2" for="projectLength">Projekttid</label>  
+              <input class="textfield pb-0 border-0 fs-6 ps-2 mb-2 bg-transparent border-bottom border-2" type="text" name="projectLength" placeholder=" xx veckor" id="projectLength"></input>
+            </div>
+
+            <div class="form-group row">
+                <label class="fs-5" for="color" class="labelDropMenu">Annonsfärg</label>
+                  <select class="dropdownMenu fs-6 p-2 mb-4 mt-2 w-5 textfield border-0 rounded-2 bg-white bg-opacity-25" name="color">
+                    <option value="#2C6F8C">Teal</option>
+                    <option value="#D6CDF4">Lila</option>
+                    <option value="#8D026A">Mörklila</option>
+                    <option value="#E6FF75">Neongul</option>
+                    <option value="#00664B">Mörkgrön</option>
+                    <option value="#FF7F11">Orange</option> 
+                    <option value="#40ff00">Grön</option>
+   
+                  </select>
+            </div>
+        
+            <div class="form-group row gap-2">
+                <button id="remove" class="button btn rounded-3 bg-white bg-opacity-75 col-sm-12 col-md-5 offset-md-1" type="reset"
+                name="clearClientForm">Rensa formulär</button>
+                <button class="button btn rounded-3 bg-white bg-opacity-75 fw-semibold col-sm-12 col-md-5" id="submit" data-bs-toggle="modal" data-bs-target="#actionModal" type="submit"
+                name="submitClientForm">Skicka in</button>        
+            </div>                    
+          </form>
+        </div>  
+      </div>
     </div>
+    
+  <div class="container">
+   <div id="cardContainer" class="container col-sm-10 col-md-12 offset-sm-1 offset-md-1 offset-lg-1 offset-xl-1 p-0 mt-5">
+   </div>
   </div>
+   
+  <div class="contactSection" id="contact">
+    <div class="row px-4 pt-5">
+      <div class="sdcText offset-1 col-6">Vi är SDC.
+      </div>
+        
+    <div class="col">
 
-     <div class="modal fade" id="actionModal" tabindex="1" role="dialog" aria-label="actionModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="contactUs col-6 position-relative mt-2" >
+        <img class="rounded-2 col-12" src="./media/img/norberg.jpg" style="width: 55%;">
+        <div class="text position-absolute top-0 start-100 mt-md-4 mt-lg-12">
+          <p class=" fw-bold mb-0">Felix Norberg</p>
+          <p class="fw-light mb-0">norberg@sdc.se</p>
+          <p class="fw-light mb-1">070-000 00 00</p>
+       </div>
+     </div>
+      
+     <div class ="contactUs col-6 position-relative mt-2">  
+      <img class="rounded-2" src="./media/img/wikberg.jpg" style="width: 55%;">
+      <div class="text position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
+        <p class=" fw-bold mb-0">Lovisa Wikberg</p>
+        <p class="fw-light mb-0">wikberg@sdc.se</p>
+        <p class="fw-light mb-1">070-000 00 00</p>
+      </div>
+    </div>
+    
+      <div class="contactUs col-6 position-relative mt-2">
+        <img class="rounded-2" src="./media/img/karlsson.jpg" style="width: 55%;">
+        <div class="text position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
+          <p class=" fw-bold mb-0">Louise Karlsson</p>
+          <p class="fw-light mb-0">karlsson@sdc.se</p>
+          <p class="fw-light mb-1">070-000 00 00</p>
+        </div> 
+      </div>
+
+      <div class="contactUs col-6 position-relative mt-2">
+        <img class="rounded-2" src="./media/img/sandell.jpg" style="width: 55%;">
+        <div class="text position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
+          <p class="fw-bold mb-0">Lovisa Sandell</p>
+          <p class="fw-light mb-0">sandell@sdc.se</p>
+          <p class="fw-light mb-1">070-000 00 00</p>
+        </div>
+      </div>
+             
+      </div>
+      </div>
+    </div>      
+    </div>  
+  </div>
+ </div>
+
+  <div class="modal fade" id="actionModal" tabindex="1" role="dialog" aria-label="actionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="actionModalLabel">Händelse registrerad</h5>        
+          <h5 class="modal-title" id="actionModalLabel">Händelse registrerad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
         </div>
         <div class="modal-body">
           <p id="feedbackMessage" class="p-2 fs-4"></p>
         </div>
         <div class="modal-footer">
-          <p class="text-bg-info p-2 rounded-3">Klicka utanför rutan för att gå vidare.</p>
+          <p class="text-info p-2 rounded-3">Klicka utanför rutan för att gå vidare.</p>
         </div>
       </div>
-      </div>
     </div>
+  </div>
 
-    <footer class="mt-5 pt-5 pb-3 text-center">
-      <p class="text-secondary fw-semibold fs-6 opacity-50">Felix Norberg, Louise Karlsson, Lovisa Wikberg, Lovisa Sandell</p>
-      <a class="link-secondary link-opacity-50-hover link-underline link-underline-opacity-0 fw-bold" href="#top">Tillbaka till toppen</a>
-    </footer>
+  <footer class="bg-opacity-50">
+    <div class="container d-flex justify-content-between align-items-center">
+    <div class="text-left opacity-50 fw-light">
+      <p class="mb-0 p-2">Framtidens talang möter dagens projekt</p>
+      </div>
+      <div class="fw-light opacity-50 p-2">
+        <p class="mb-0">© 2025. All rights reserved.</p>
+      </div>
+      <div class="text-right">
+    <a class="link-secondary link-opacity-50-hover link-underline link-underline-opacity-0 fw-light text-left p-2" href="#top">Tillbaka till toppen</a>
+  </div>
+  </div>
+</div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEJ+M2IqR6j1e8Y7b8tGs7D3xFT7roGJRhFwGHV3Z37LeutM7H4a56T44kq2Y" crossorigin="anonymous"></script>
-<script src ="./script.js"></script>
+  <script src ="./script.js"></script>
 </body>
 </html>
