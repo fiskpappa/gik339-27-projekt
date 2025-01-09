@@ -78,7 +78,7 @@
             <div class="form-group row gap-2">
                 <button id="remove" class="button btn rounded-3 bg-white bg-opacity-75 col-sm-12 col-md-5 offset-md-1" type="reset"
                 name="clearClientForm">Rensa formulär</button>
-                <button class="button btn rounded-3 bg-white bg-opacity-75 fw-semibold col-sm-12 col-md-5" id="submit" data-bs-toggle="modal" data-bs-target="#actionModal" type="submit"
+                <button class="button btn rounded-3 bg-white bg-opacity-75 fw-semibold col-sm-12 col-md-5" id="submit" type="submit"
                 name="submitClientForm">Skicka in</button>        
             </div>                    
           </form>
@@ -145,14 +145,14 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="actionModalLabel">Händelse registrerad</h5>
+          <h5 class="modal-title" id="actionModalLabel">Förändring utförd:</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
         </div>
         <div class="modal-body">
           <p id="feedbackMessage" class="p-2 fs-4"></p>
         </div>
         <div class="modal-footer">
-          <p class="text-info p-2 rounded-3">Klicka utanför rutan för att gå vidare.</p>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Uppfattat</button>
         </div>
       </div>
     </div>

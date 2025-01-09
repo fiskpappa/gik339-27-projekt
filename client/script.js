@@ -29,7 +29,7 @@ function fetchData() {
           <circle cx="8" cy="8" r="8"/>
           </svg>
           <button class="button shadow-sm ms-auto btn rounded-3 bg-white" onclick="setCurrentClient(${client.id}); scrollToSection('formSection');">Ändra</button>
-          <button data-bs-toggle="modal" data-bs-target="#actionModal" class="shadow-sm button btn mx-3 rounded-3 bg-white text-danger" onclick="deleteClient(${client.id})">Ta bort</button>
+          <button class="shadow-sm button btn mx-3 rounded-3 bg-white text-danger" onclick="deleteClient(${client.id})">Ta bort</button>
           </div>
         </li>`;
         });
@@ -66,7 +66,7 @@ function deleteClient(id) {
     .then((response) => {
       if (response.ok) {
         fetchData();
-        showModal('Resursen har tagits bort!');
+        showModal('Företagsinformation har raderats.');
       } else {
         showModal('Ett fel uppstod när resursen skulle tas bort.');
       }
@@ -126,7 +126,7 @@ function handleSubmit(e) {
       fetchData();
       localStorage.removeItem('currentId');
       clientForm.reset();
-      showModal(id ? 'Information har uppdaterats.' : 'Företagsinformation har lagts till.');
+      showModal(id ? 'Företagsinformation har uppdaterats.' : 'Företagsinformation har lagts till.');
       } else {
         console.error('Ett fel har uppstått när informationen försökte sparas.');
         showModal('Ett fel har inträffat.')
