@@ -23,7 +23,8 @@ server.get('/client', (req, res) => {
 
     db.all(sql, (err, rows) => {
         if (err) {
-            res.status(500).send(err);
+            console.log('Ett fel uppstod vid hämtning av all företagsdata:', err);
+            res.status(500).send();
         } else {
             res.send(rows);
         }
@@ -37,12 +38,13 @@ server.get('/client/:id', (req, res) => {
 
     db.all(sql, (err, rows) => {
       if (err) {
+        console.log('Ett fel uppstod vid hämtning av företagsdata:', err);
         res.status(500).send(err);
       } else {
         res.send(rows[0]);
       }
     });
-  });
+  }); 
 
  
 server.post('/client', (req, res) => {
@@ -52,10 +54,10 @@ server.post('/client', (req, res) => {
     
     db.run(sql, Object.values(client), (err) => {
         if (err) {
-          console.log(err);
+          console.log('Ett fel uppstod vid skapande av företaget:', err);
           res.status(500).send(err);
         } else {
-          res.send('Företaget sparades');
+          res.send('Företaget sparades!');
         }
       });
 });
@@ -83,7 +85,7 @@ server.put('/client/:id', (req, res) => {
   
     db.run(sql, (err) => {
       if (err) {
-        console.log(err);
+        console.log('Ett fel uppstod vid uppdatering av företaget:', err);
         res.status(500).send(err);
       } else {
         res.send('Företaget uppdaterades!');
@@ -98,9 +100,8 @@ server.delete('/client/:id', (req, res) => {
 
   db.run(sql, (err) => {
     if (err) {
-      console.log(err);
+      console.log('Ett fel uppstod vid borttagning av företaget:', err);
       res.status(500).send(err);
-/*         console.error('Kunde inte ta bort'); */
     } else {
       res.send('Företagsinformation borttagen');
     }

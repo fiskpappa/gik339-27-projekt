@@ -28,7 +28,8 @@ function fetchData() {
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="${client.color}" class="bi bi-circle-fill ms-3" viewBox="0 0 16 16">
           <circle cx="8" cy="8" r="8"/>
           </svg>
-          <button class="button shadow-sm ms-auto btn rounded-3 bg-white" onclick="setCurrentClient(${client.id}); scrollToSection('formSection');">Ändra</button>
+          <a href="#formSection" class="button shadow-sm ms-auto btn rounded-3 bg-white" onclick="setCurrentClient(${client.id});">Ändra</a>
+          <!-- <button class="button shadow-sm ms-auto btn rounded-3 bg-white" onclick="setCurrentClient(${client.id}); scrollToSection('formSection');">Ändra</button>  -->
           <button class="shadow-sm button btn mx-3 rounded-3 bg-white text-danger" onclick="deleteClient(${client.id})">Ta bort</button>
           </div>
         </li>`;
