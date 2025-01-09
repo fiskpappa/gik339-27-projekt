@@ -10,11 +10,11 @@ function fetchData() {
         let html = `<ul class="list-unstyled row gap-4">`;
         clients.forEach((client) => {
           html += `
-        <li class="clientCard p-0 shadow col-sm-12 col-md-5 col-xl-3 rounded-4 bg-white bg-opacity-50">
-          <header class="cardHeader p-3 py-3 rounded-top-4 mb-3" style="border-bottom: solid .25rem ${client.color};">
-          <h3 class="mt-2 colorChanger fw-bold" style="color:rgb(61, 58, 59);">${client.companyName}</h3>
+        <li class="clientCard d-block p-0 shadow col-sm-12 col-md-5 col-xl-3 rounded-4 bg-white bg-opacity-50">
+          <header class="cardHeader px-3 py-3 rounded-top-4 mb-3" style="border-bottom: solid .25rem ${client.color};">
+          <h3 class="cardHeader mt-2 colorChanger fw-bold" style="color:rgb(61, 58, 59);">${client.companyName}</h3>
           </header>
-          <div class="infoContainer mb-2">
+          <div class="infoContainer d-block mb-2">
           <p class="mb-0 px-3 mt-2" style="color:rgb(61, 58, 59);"><b>Kontaktperson:</b></p> 
           <p class="mb-2 px-3" style="color:rgb(61, 58, 59);">${client.contactName}</p>  
           <p class="mb-0 px-3" style="color:rgb(61, 58, 59);"><b>Email:</b></p> 
@@ -33,7 +33,7 @@ function fetchData() {
           </div>
         </li>`;
         });
-        html += `</ul>`; 
+        html += `</ul>`;
 
         const cardContainer = document.getElementById('cardContainer');
         cardContainer.innerHTML = '';

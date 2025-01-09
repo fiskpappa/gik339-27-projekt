@@ -26,9 +26,9 @@
 
     <div class="container formSection" id="formSection">
       <div class="row align-items-start gap-4 offset-1">
-        <div class="about p-5 rounded-4 shadow mb-5 fs-5 fw-light offset-sm-1 offset-lg-0 col-sm-9 col-lg-4"> 
-          <p>Student Design Collective är en plattform som kopplar samman företag med designstudenter. 
-            Företag kan enkelt lägga upp mindre designprojekt i en databas, som studenter sedan kan 
+        <div class="about p-4 rounded-4 shadow mb-5 fs-5 fw-light offset-sm-1 offset-lg-0 col-sm-9 col-lg-4"> 
+          <p class="px-2">Student Design Collective är en plattform som kopplar samman företag med designstudenter. 
+            Företag kan enkelt lägga upp mindre designprojekt här i vår databas, som studenter sedan kan 
             ta åt sig för att utveckla sina färdigheter och bygga sin portfolio. Tjänsten ger företag tillgång 
             till kreativ talang till ett överkomligt pris, samtidigt som studenter får värdefull arbetslivserfarenhet 
             och möjlighet att nätverka inom branschen. Ett perfekt sätt att förena studenter med företag.</p>
@@ -58,7 +58,7 @@
 
             <div class="form-group row">
             <label class="fs-5 pt-2" for="projectLength">Projekttid</label>  
-              <input class="textfield pb-0 border-0 fs-6 ps-2 mb-2 bg-transparent border-bottom border-2" type="text" name="projectLength" placeholder=" xx veckor" id="projectLength"></input>
+              <input class="textfield pb-0 border-0 fs-6 ps-2 mb-2 bg-transparent border-bottom border-2" type="number" min="1" name="projectLength" placeholder=" xx veckor" id="projectLength"></input>
             </div>
 
             <div class="form-group row">
@@ -91,15 +91,15 @@
    </div>
   </div>
    
-  <div class="contactSection" id="contact">
-    <div class="row px-4 pt-5">
-      <div class="sdcText offset-1 col-6">Vi är SDC.
+  <div class="contactSection offset-xs-1 offset-lg-0" id="contact">
+    <div class="row px-4">
+      <div class="sdcText offset-1 col-xs-9 col-md-5 pb-5">Vi är SDC.
       </div>
         
-    <div class="col">
+    <div class="teamSection col-xs-12 col-lg-5 offset-xs-1 offset-lg-0 ">
 
       <div class="contactUs col-6 position-relative mt-2" >
-        <img class="rounded-2 col-12" src="./media/img/norberg.jpg" style="width: 55%;">
+        <img class="rounded-2 col-10 offset-2" src="./media/img/norberg.jpg" style="width: 55%;">
         <div class="text position-absolute top-0 start-100 mt-md-4 mt-lg-12">
           <p class=" fw-bold mb-0">Felix Norberg</p>
           <p class="fw-light mb-0">norberg@sdc.se</p>
@@ -108,7 +108,7 @@
      </div>
       
      <div class ="contactUs col-6 position-relative mt-2">  
-      <img class="rounded-2" src="./media/img/wikberg.jpg" style="width: 55%;">
+      <img class="rounded-2 col-10 offset-2" src="./media/img/wikberg.jpg" style="width: 55%;">
       <div class="text position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
         <p class=" fw-bold mb-0">Lovisa Wikberg</p>
         <p class="fw-light mb-0">wikberg@sdc.se</p>
@@ -117,7 +117,7 @@
     </div>
     
       <div class="contactUs col-6 position-relative mt-2">
-        <img class="rounded-2" src="./media/img/karlsson.jpg" style="width: 55%;">
+        <img class="rounded-2 col-10 offset-2" src="./media/img/karlsson.jpg" style="width: 55%;">
         <div class="text position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
           <p class=" fw-bold mb-0">Louise Karlsson</p>
           <p class="fw-light mb-0">karlsson@sdc.se</p>
@@ -126,7 +126,7 @@
       </div>
 
       <div class="contactUs col-6 position-relative mt-2">
-        <img class="rounded-2" src="./media/img/sandell.jpg" style="width: 55%;">
+        <img class="rounded-2 col-10 offset-2" src="./media/img/sandell.jpg" style="width: 55%;">
         <div class="text position-absolute col-12 top-0 start-100 mt-md-4 mt-lg-12">
           <p class="fw-bold mb-0">Lovisa Sandell</p>
           <p class="fw-light mb-0">sandell@sdc.se</p>
@@ -174,7 +174,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEJ+M2IqR6j1e8Y7b8tGs7D3xFT7roGJRhFwGHV3Z37LeutM7H4a56T44kq2Y" crossorigin="anonymous"></script>
   <script src ="./script.js"></script>
 </body>
 </html>

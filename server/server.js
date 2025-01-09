@@ -55,7 +55,7 @@ server.post('/client', (req, res) => {
           console.log(err);
           res.status(500).send(err);
         } else {
-          res.send('Användaren sparades');
+          res.send('Företaget sparades');
         }
       });
 });
@@ -86,7 +86,7 @@ server.put('/client/:id', (req, res) => {
         console.log(err);
         res.status(500).send(err);
       } else {
-        res.send('Användaren uppdaterades');
+        res.send('Företaget uppdaterades!');
       }
     });
   });
@@ -100,8 +100,9 @@ server.delete('/client/:id', (req, res) => {
     if (err) {
       console.log(err);
       res.status(500).send(err);
+/*         console.error('Kunde inte ta bort'); */
     } else {
-      res.send('Användaren borttagen');
+      res.send('Företagsinformation borttagen');
     }
   });
 });
