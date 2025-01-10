@@ -29,7 +29,6 @@ function fetchData() {
           <circle cx="8" cy="8" r="8"/>
           </svg>
           <a href="#formSection" class="button shadow-sm ms-auto btn rounded-3 bg-white" onclick="setCurrentClient(${client.id});">Ändra</a>
-          <!-- <button class="button shadow-sm ms-auto btn rounded-3 bg-white" onclick="setCurrentClient(${client.id}); scrollToSection('formSection');">Ändra</button>  -->
           <button class="shadow-sm button btn mx-3 rounded-3 bg-white text-danger" onclick="deleteClient(${client.id})">Ta bort</button>
           </div>
         </li>`;
@@ -127,7 +126,7 @@ function handleSubmit(e) {
       fetchData();
       localStorage.removeItem('currentId');
       clientForm.reset();
-      showModal(id ? 'Företagsinformation har uppdaterats.' : 'Företagsinformation har lagts till.');
+      showModal(id ? 'Företagsinformationen har uppdaterats.' : 'Företagsinformationen har lagts till!');
       } else {
         console.error('Ett fel har uppstått när informationen försökte sparas.');
         showModal('Ett fel har inträffat.')
@@ -136,17 +135,6 @@ function handleSubmit(e) {
     .catch((error) => console.error('Det blev ett fel när du skickade in formuläret:', error));
   }
 
-
-function scrollToSection(id) {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  }
-}
-
 function showModal(message) {
   const feedbackMessage = document.getElementById('feedbackMessage');
   feedbackMessage.textContent = message;
@@ -154,5 +142,3 @@ function showModal(message) {
   const actionModal = new bootstrap.Modal(document.getElementById('actionModal'));
   actionModal.show();
 }
-
-
