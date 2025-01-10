@@ -32,15 +32,11 @@ footer {
 
 .underText {
     font-size: 1rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    line-height:1.5rem;
-    
-    
-    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+    line-height:1.5rem;   
 }
 
 .text {
-    /* font-size: .9rem; */
     font-size: clamp(.1rem, 2vw, 1.3rem);
 }
 
@@ -104,3 +100,6 @@ li h3 {
     color: black;
 }
 
+.footer {
+    background-image: linear-gradient( to top, #2c2c2c3f, #22222215, #ffffff00, #ffffff00, #ffffff00, #ffffff00, #ffffff00); 
+} 

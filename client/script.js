@@ -24,12 +24,12 @@ function fetchData() {
           <p class="mb-0 px-3" style="color:rgb(61, 58, 59);"><b>Projektlängd:</b></p>
           <p class="mb-2 px-3" style="color:rgb(61, 58, 59);">${client.projectLength} veckor</p>
           </div>
-          <div class="d-flex mt-auto py-3 px-2 rounded-bottom-4">
+          <div class="d-flex mt-auto py-3 px-2 rounded-bottom-4"> 
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="${client.color}" class="bi bi-circle-fill ms-3" viewBox="0 0 16 16">
           <circle cx="8" cy="8" r="8"/>
           </svg>
           <a href="#formSection" class="button shadow-sm ms-auto btn rounded-3 bg-white" onclick="setCurrentClient(${client.id});">Ändra</a>
-          <button class="shadow-sm button btn mx-3 rounded-3 bg-white text-danger" onclick="deleteClient(${client.id})">Ta bort</button>
+          <button class="deleteButton shadow-sm button btn mx-3 rounded-3 bg-white text-danger" data-id="${client.id}">Ta bort</button>
           </div>
         </li>`;
         });
@@ -38,9 +38,30 @@ function fetchData() {
         const cardContainer = document.getElementById('cardContainer');
         cardContainer.innerHTML = '';
         cardContainer.insertAdjacentHTML('beforeend', html);
+
+        clients.forEach(client => {
+          const button = document.querySelector(`.deleteButton[data-id="${client.id}"]`);
+          button.addEventListener('click', () => deleteClient(client.id));  
+        });
       }
     });
 }
+
+function deleteClient(id) {
+  fetch(`${url}/${id}`, { method: 'DELETE' })
+    .then((response) => {
+      if (response.ok) {
+        fetchData();
+        showModal('Företagsinformation har raderats.');
+      } else {
+        showModal('Ett fel uppstod när resursen skulle tas bort.');
+      }
+    })
+    .catch((error) => {
+      console.error('Fel vid borttagning av resurs:', error);
+      showModal('Ett oväntat fel inträffade.');
+    });
+}  
 
 function setCurrentClient(id) {
   console.log('Current ID:', id);
@@ -61,21 +82,6 @@ function setCurrentClient(id) {
     });
 }
 
-function deleteClient(id) {
-  fetch(`${url}/${id}`, { method: 'DELETE' })
-    .then((response) => {
-      if (response.ok) {
-        fetchData();
-        showModal('Företagsinformation har raderats.');
-      } else {
-        showModal('Ett fel uppstod när resursen skulle tas bort.');
-      }
-    })
-    .catch((error) => {
-      console.error('Fel vid borttagning av resurs:', error);
-      showModal('Ett oväntat fel inträffade.');
-    });
-}  
 
 
 clientForm.addEventListener('submit', handleSubmit);
